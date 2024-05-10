@@ -1,0 +1,13 @@
+__pycache__
+db-data
+*.pyc
+*.pyo
+*.pyd
+.git
+.gitignore
+.dockerignore
+.DS_Store
+compose.yaml
+Dockerfile
+Makefile
+README.md

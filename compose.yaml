@@ -1,0 +1,30 @@
+services:
+  django:
+    build:
+      context: .
+    container_name: wingz_django
+    command: /bin/bash
+    links:
+      - postgres:postgres
+    ports:
+      - 8000:8000
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./wingz:/usr/app/wingz
+      - ./manage.py:/usr/app/manage.py
+      - ./requirements.txt:/usr/app/requirements.txt
+    working_dir: /usr/app
+
+  postgres:
+    image: postgres:latest
+    container_name: wingz_postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
