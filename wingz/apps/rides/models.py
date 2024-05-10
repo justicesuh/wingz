@@ -24,7 +24,7 @@ class Ride(models.Model):
     pickup_time = models.DateTimeField(_('pickup time'), null=True, blank=True)
 
 
-class RideEvent:
+class RideEvent(models.Model):
     ride = models.ForeignKey(Ride, related_name='events', on_delete=models.SET_NULL, null=True, blank=True)
     description = models.CharField(_('description'), max_length=64)
     created_at = models.DateTimeField(_('created at'), auto_now_add=True)
