@@ -7,7 +7,7 @@ from apps.rides.serializers import RideSerializer, RideEventSerializer
 
 
 class RideViewSet(ModelViewSet):
-    queryset = Ride.objects.all()
+    queryset = Ride.objects.select_related('rider').select_related('driver').prefetch_related('events').all()
     serializer_class = RideSerializer
     filterset_class = RideFilter
     ordering = ('pickup_time',)
