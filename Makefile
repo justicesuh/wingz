@@ -33,3 +33,7 @@ migrate:
 .PHONY: shell
 shell:
 	docker exec -it ${NAME}_django /bin/bash
+
+.PHONY: superuser
+superuser:
+	docker exec -it ${NAME}_django python manage.py createsuperuser
