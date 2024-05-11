@@ -16,7 +16,7 @@ class RideEventSerializer(serializers.ModelSerializer):
 class RideSerializer(serializers.ModelSerializer):
     rider = UserSerializer()
     driver = UserSerializer()
-    events = RideEventSerializer(many=True)
+    events = RideEventSerializer(source='todays_ride_events', many=True)
 
     class Meta:
         model = Ride
