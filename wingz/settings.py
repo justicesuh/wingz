@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'silk',
     'rest_framework',
     'django_filters',
+    'drf_spectacular',
     'apps.rides',
     'apps.users',
 ]
@@ -58,7 +59,14 @@ REST_FRAMEWORK = {
         'apps.users.permissions.IsAdmin',
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'PAGE_SIZE': 10,
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Wingz',
+    'DESCRIPTION': 'RESTful API for managing ride information',
+    'SERVE_INCLUDE_SCHEMA': False,
 }
 
 ROOT_URLCONF = 'wingz.urls'
