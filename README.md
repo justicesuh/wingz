@@ -25,7 +25,9 @@ make serve
 make down
 ```
 
-OpenAPI schema is available as both SwaggerUI ([http://localhost:8000/api/schema/swagger-ui/](http://localhost:8000/api/schema/swagger-ui/)) and Redoc ([http://localhost:8000/api/schema/redoc/](http://localhost:8000/api/schema/redoc/))
+### OpenAPI Schema
+
+Available as both SwaggerUI ([http://localhost:8000/api/schema/swagger-ui/](http://localhost:8000/api/schema/swagger-ui/)) and Redoc ([http://localhost:8000/api/schema/redoc/](http://localhost:8000/api/schema/redoc/))
 
 ## Design Decisions
 
@@ -50,4 +52,5 @@ Miscellaneous notes and features to be implemented
 - Use `django-environ` to load settings from `.env` based on environment
 - Disable `django-silk` or require authentication
 - Validate user phone numbers as [E.164](https://en.wikipedia.org/wiki/E.164)
+- Lint with `flake8`
 - Write unit tests
