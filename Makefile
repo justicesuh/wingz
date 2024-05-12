@@ -37,3 +37,7 @@ shell:
 .PHONY: superuser
 superuser:
 	docker exec -it ${NAME}_django python manage.py createsuperuser
+
+.PHONY: report
+report:
+	docker exec -it ${NAME}_django python manage.py generatereport
