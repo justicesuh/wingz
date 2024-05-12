@@ -43,7 +43,8 @@ Some notes on design decisions
 - Set the default `on_delete` behavior to `models.SET_NULL` out of convenience
 - Used `DecimalField` versus `FloatField` (as specified in the requirements) since decimal math is more precise compared to float math
     - Based on whether we are reading or writing more frequently to the database, "good enough" float math may be worth the performance benefits
-- Chose Postgres over MySQL because Postgres offers geospatial extensions (PostGIS comes to mind)
+- Chose Postgres over MySQL because Postgres offers geospatial extensions
+- Calculated distance to pickup using the [Haversine distance](https://en.wikipedia.org/wiki/Haversine_formula) due to simpler math. If greater accuracy is needed, worth looking into proper geodesic distance using [Vincenty algorithm](https://en.wikipedia.org/wiki/Vincenty%27s_formulae)
 
 ## Other Notes
 

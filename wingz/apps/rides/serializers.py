@@ -8,6 +8,7 @@ class RideEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = RideEvent
         fields = (
+            'id',
             'description',
             'created_at',
         )
@@ -21,6 +22,7 @@ class RideSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ride
         fields = (
+            'id',
             'status',
             'rider',
             'driver',

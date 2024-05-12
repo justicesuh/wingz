@@ -11,7 +11,7 @@ from apps.rides.views import RideViewSet, RideEventViewSet
 from apps.users.views import UserViewSet
 
 router = SimpleRouter()
-router.register(r'api/rides', RideViewSet)
+router.register(r'api/rides', RideViewSet, basename='ride')
 router.register(r'api/events', RideEventViewSet)
 router.register(r'api/users', UserViewSet)
 
